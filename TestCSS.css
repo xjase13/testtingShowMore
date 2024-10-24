@@ -1,0 +1,203 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #2e364a;
+    transition: background-color 0.5s ease; /* Add this line */
+}
+
+@supports (font-variation-settings: normal) {
+    body {
+      font-family: 'Inter var', sans-serif;
+    }
+  }
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+}
+
+.centered {
+    text-align: center;
+}
+
+/* Header styles */
+header {
+    background-color: transparent;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav li {
+    margin-right: 1rem;
+}
+
+.nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.nav a:hover,
+.nav a:focus {
+    border-color: var(--primary-color);
+}
+
+.name {
+    font-family: 'Brush Script MT';
+    position: relative;
+    font-size: 2.0rem;
+    color: white;
+    cursor: pointer;
+}
+
+.name::after {
+    content: "IT ASSOCIATE - UNUM LTD";
+    position: absolute;
+    top: 90%;
+    left: -100%; /* Start from the left side, outside the viewport */
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out, left 0.3s ease-in-out; /* Add transition for opacity and left properties */
+}
+
+.name:hover::after {
+    left: -25%; /* Move to the desired position on hover */
+    opacity: 1; /* Show the text on hover */
+}
+
+/* Main styles */
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.section {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeOut 0.5s ease-in-out;
+}
+
+    .section.visible {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+#Home {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+}
+
+a {
+    color: lightblue;
+    transition: color 0.3s ease;
+}
+
+    a:hover {
+        color: blue;
+    }
+
+/* Section box home */
+
+* {
+    box-sizing: border-box;
+}
+
+#sectionbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    position: relative;
+    gap: 20px;
+    padding: 20px;
+}
+
+.box {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid white;
+    background-color: #f9f9f9;
+}
+
+.content {
+    display: flex;
+    align-items: flex-start;
+}
+
+.content img {
+    margin-right: 15px;
+}
